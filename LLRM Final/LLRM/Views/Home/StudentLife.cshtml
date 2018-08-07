@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "StudentLife";
+    Layout = "~/Views/Shared/Sidebar.cshtml";
+}
+@using LLRM.Areas.Auth.Models
+@using Admin2.Models
+@{
+  
+    dbcontext db = new dbcontext();
+    List<Pages> page = db.Pages.ToList();
+
+}
+
+
+
+<div class="col-sm-12 col-md-12">
+    <div class="ulock-about">
+       @foreach (var about in page.Where(x => x.id == 3))
+       {
+        
+            <div class="message"><img src="~/UploadedFiles/@about.Image" alt="No Image" /></div>
+            @Html.Raw(about.Description)
+
+
+       }
+    </div>
+</div>
+
+
+
+
+@section Sidebar{
+    <div class="widget-sidebar">
+        <div class="ulockd-all-service">
+
+            <div class="list-group">
+
+                @Html.ActionLink("About Us", "AboutUs", "", new { @class = "list-group-item" })
+                @Html.ActionLink("Director  Message", "AboutUs", "", new { @class = "list-group-item" })
+
+
+            </div>
+        </div>
+    </div>
+    <div class="ulockd-inr-testimonials">
+        <div class="ulockd-tm-client-details">
+            <div class="ulockd-tm-name">
+                <h4 class="text-thm1">Download Prospectus</h4>
+            </div>
+        </div>
+        <p><a href="~/UploadedFiles/prospectus_2017_FOR_WEB.pdf" target="_blank">Click Here To Download</a></p>
+
+    </div>
+}
+
+

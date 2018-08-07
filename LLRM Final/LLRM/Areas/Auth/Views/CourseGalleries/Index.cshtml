@@ -1,0 +1,40 @@
+﻿@model IEnumerable<LLRM.Areas.Auth.Models.CourseGallery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Courses.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Courses.Name)
+        </td>
+        <td>
+            <img src="~/UploadedFiles/@item.Image" width="100" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourseGalId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourseGalId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseGalId })
+        </td>
+    </tr>
+}
+
+</table>

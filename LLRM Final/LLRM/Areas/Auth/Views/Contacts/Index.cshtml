@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LLRM.Areas.Auth.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentHelpline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddmissionContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficeContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddmissionEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentHelpline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddmissionContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfficeContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddmissionEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,123 @@
+﻿@model LLRM.Areas.Auth.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="ulockd-inner-home">
+    <div class="container text-center">
+        <div class="row">
+            <div class="inner-conraimer-details">
+                <div class="col-md-12">
+                    <h1 class="text-uppercase">Contact Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ulockd-contact-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div class="ulockd-cp-title">
+                    <h2 class="text-uppercase">CONTACT DETAILS</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                <div class="ulockd-ohour-info style2 text-center">
+                    <div class="ulockd-icon text-thm2"><span class="fa fa-envelope"></span></div>
+                    <div class="ulockd-info">
+                        <h3>Mail Us</h3>
+                        <p class="ulockd-addrss"><strong>Email:</strong> @Model.Email</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                <div class="ulockd-ohour-info style2 text-center">
+                    <div class="ulockd-icon text-thm2"><span class="fa fa-phone"></span></div>
+                    <div class="ulockd-info">
+                        <h3>Call Us</h3>
+                        <p class="ulockd-addrss"><strong>Student Life:</strong>@Model.StudentHelpline</p>
+                        <p class="ulockd-addrss"><strong>Addmission:</strong>@Model.StudentHelpline</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                <div class="ulockd-ohour-info style2 text-center">
+                    <div class="ulockd-icon text-thm2"><span class="fa fa-map-signs"></span></div>
+                    <div class="ulockd-info">
+                        <h3>Address</h3>
+                        <p>@Model.Address</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                <div class="ulockd-ohour-info style2 text-center">
+                    <div class="ulockd-icon text-thm2"><span class="fa fa-edit"></span></div>
+                    <div class="ulockd-info">
+                        <h3>Addmission</h3>
+                        <p class="ulockd-addrss"><strong>Email:</strong> @Model.AddmissionEmail</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ulockd-mrgn1250">
+            <div class="col-md-12">
+                <div class="ulockd-contact-form">
+                    @using (Html.BeginForm("Email", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="messages"></div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input id="form_name" name="name" class="form-control ulockd-form-fg required" placeholder="Your name" required="required" data-error="Name is required." type="text">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input id="form_email" name="email" class="form-control ulockd-form-fg required email" placeholder="Your email" required="required" data-error="Email is required." type="email">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input id="form_phone" name="phone" class="form-control ulockd-form-fg required" placeholder="Phone" required="required" data-error="Phone Number is required." type="text">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input id="form_subject" name="subject" class="form-control ulockd-form-fg required" placeholder="Subject" required="required" data-error="Subject is required." type="text">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea id="form_message" name="message" class="form-control ulockd-form-tb required" rows="12" placeholder="Your massage" required="required" data-error="Message is required."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group ulockd-contact-btn">
+                                    <input id="form_botcheck" name="form_botcheck" class="btn btn-primary"  value="Submit" type="submit">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid ulockd-padz">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ulockd-google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3426.4600095609417!2d75.34320491513353!3d30.81777408160763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a75339463304b%3A0x62b15a41a39ee9c0!2sLALA+LAJPAT+RAI+MEMORIAL+POLYTECHNIC+COLLEGE!5e0!3m2!1sen!2sin!4v1531569076308" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

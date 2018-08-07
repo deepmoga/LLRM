@@ -1,0 +1,83 @@
+﻿@using LLRM.Areas.Auth.Models
+@using Admin2.Models
+@{ 
+    Layout = null;
+    dbcontext db = new dbcontext();
+    List<infrastructure> inf = db.infrastructures.ToList();
+}
+@model IEnumerable<LLRM.Areas.Auth.Models.Course>
+
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/Sidebar.cshtml";
+}
+
+<h2>Courses</h2>
+
+@section bread {
+    <div class="ulockd-inner-home">
+        <div class="container text-center">
+            <div class="row">
+                <div class="inner-conraimer-details">
+                    <div class="col-md-12">
+                        <h1 class="text-uppercase">@TempData["Name"]</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="col-sm-12 col-md-12">
+    <div class="ulock-about">
+        <table class="table table-bordered">
+            <tr>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+               
+            </tr>
+
+            @foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        
+    </tr>
+}
+
+        </table>
+       </div>
+    </div>
+        @section Sidebar{
+            <div class="widget-sidebar">
+                <div class="ulockd-all-service">
+
+                    <div class="list-group">
+                        @foreach (var de in inf)
+                        {
+                            @Html.ActionLink(de.Name, "Facility", new { id = de.id }, new { @class = "list-group-item" })
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="ulockd-inr-testimonials">
+                <div class="ulockd-tm-client-details">
+                    <div class="ulockd-tm-name">
+                        <h4 class="text-thm1">Download Prospectus</h4>
+                    </div>
+                </div>
+                <p><a href="~/UploadedFiles/prospectus_2017_FOR_WEB.pdf" target="_blank">Click Here To Download</a></p>
+
+            </div>
+        }

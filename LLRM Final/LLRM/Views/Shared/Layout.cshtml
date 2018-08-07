@@ -1,0 +1,346 @@
+﻿@using LLRM.Areas.Auth.Models
+@using Admin2.Models
+@{
+    Layout = null;
+    dbcontext db = new dbcontext();
+    List<departmentdata> dep = db.departmentdatas.ToList();
+    List<Category> cat = db.Categories.ToList();
+    List<infrastructureData> inf = db.infrastructureDatas.ToList();
+    List<Contact> cc = db.Contacts.ToList();
+    List<Pages> page = db.Pages.Where(x=>x.id==2).ToList();
+}
+
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+
+<!-- Mirrored from unlockdesizn.com/html/corporate/education/iqra/demo/index-multipage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Jul 2018 15:19:10 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css file -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Responsive stylesheet -->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- Title -->
+    <title>LLRM College</title>
+    <!-- Favicon -->
+    <link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+    <link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" />
+
+    <link href="~/css/owlcrauwsal.css" rel="stylesheet" />
+    <link href="~/css/owltheme.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        @*<div id="preloader" class="preloader">
+                <div id="pre" class="preloader_container"><div class="preloader_disabler btn btn-default">Disable Preloader</div></div>
+            </div>*@
+        <div class="header-top ulockd-pad1225 ulockd-pad645 ulockd-bgthm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="welcm-ht">
+                            <img src="~/images/llrm.png" class="img-responsive" />
+                        </div>
+                    </div>
+                 
+                    <div class="col-md-4">
+                        <div class="welcm-ht text-right">
+                            <ul class="list-inline">
+                                <li>
+                                    <h4 class="help">Student Helpline</h4>
+                                    <a href="tel:@cc[0].StudentHelpline">@cc[0].StudentHelpline</a>
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Styles -->
+        <header class="header-nav fixedup">
+            <div class="menu-fixed-center navbar-scrolltofixed">
+                <div class="container ulockd-pdng0">
+                    <nav class="navbar navbar-default bootsnav">
+                        <!-- Start Top Search -->
+                        <div class="top-search">
+                            <div class="container">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-addon close-search"><i class="fa fa-times color-white"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Top Search -->
+
+                        <div class="container">
+                            <!-- Start Atribute Navigation -->
+                            @*<div class="attr-nav">
+                                <ul>
+                                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                                    <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
+                                </ul>
+                            </div>*@
+                            <!-- End Atribute Navigation -->
+                            <!-- Start Header Navigation -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <a class="navbar-brand ulockd-main-logo2" href="#brand">
+                                    @*<img src="~/images/logollrm.png" class="logonew" alt="header-logo2.png">*@
+                                </a>
+                            </div>
+                            <!-- End Header Navigation -->
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="navbar-menu">
+                                <ul class="nav navbar-nav navbar-center " data-in="flipInY">
+                                    <li>
+                                        @Html.ActionLink("Home", "Index")
+
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                @Html.ActionLink("About Us", "AboutUs")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Director Message", "DirectorMessage")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("The Institute", "Institute")
+
+                                            </li>
+
+                                            <li>
+                                                @Html.ActionLink("Our Mission & Vision", "MissionVision")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Readmission Committee", "ReadmissionCommittee")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Placement Cell", "placementcell")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Scholarship Committee", "ScholarshipCommittee")
+
+                                            </li>
+                                            <li>
+                                                @Html.ActionLink("Anti Ragging & Sexual Harrsment Cell", "AntiRagging")
+
+                                            </li>
+
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Department</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach (var a in dep)
+                                            {
+                                                <li>@Html.ActionLink(a.name, "Departments", new { id = a.Depid })</li>
+                                            }
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission</a>
+                                        <ul class="dropdown-menu">
+
+                                            <li><a href="~/UploadedFiles/prospectus_2017_FOR_WEB.pdf" target="_blank">Prospectus 2018-2019</a></li>
+
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gallery</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown">
+                                                @Html.ActionLink("Gallery", "Gallery")
+
+                                            </li>
+
+
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Infrastructure</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach (var i in inf)
+                                            {
+                                                <li>@Html.ActionLink(i.Name, "Facility", new { id = i.Infraid })</li>
+                                            }
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Announcements</a>
+                                        <ul class="dropdown-menu">
+                                            @foreach (var a in cat)
+                                            {
+                                                <li>@Html.ActionLink(a.Name, "Courses", new { id = a.catid })</li>
+                                            }
+                                            <li>
+                                                <a href="http://llrmp.com/" target="_blank">LLRMP</a>
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown" style="display:none">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Diploma Courses</a>
+                                        <ul class="dropdown-menu">
+
+                                            <li>
+                                                <a href="http://llrmp.com/" target="_blank">LLMPC</a>
+
+                                            </li>
+
+
+                                        </ul>
+                                    </li>
+
+
+                                    <li>
+
+                                        @Html.ActionLink("Contact Us", "Contact")
+                                    </li>
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div>
+
+                        <!-- Start Side Menu -->
+                        
+                        <!-- End Side Menu -->
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="all-body-content">
+            <!-- Home Design -->
+            <div class="ulockd-home-slider">
+                @RenderBody()
+            </div>
+
+           
+
+
+        </div>
+
+        <!-- Our Footer -->
+        <section style="padding: 0px;background: black;">
+            <div class="container footer-padding">
+
+                <div class="row">
+                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                        <div class="widget-about">
+                            <h3>About Us</h3>
+                            @Html.Raw(page[0].Description)
+                        </div>
+
+                    </div>
+                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                        <div class="twitter-widget">
+                            <h3>Follow Us</h3>
+                            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2Fbiz%2FLLRM-Polytechnic-College-Ajitwal-Moga-307126412725853&tabs&width=290&height=250&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=755281824540788" width="290" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                        <div class="news-widget zxc">
+                            <h3>Contact Details</h3>
+                            <div class="ulockd-media-box">
+                                <address> <b> Address :</b> @cc[0].Address </address>
+                                <p>Addmission Helpline : @cc[0].AddmissionContact</p>
+                                <p>Student Helpline : @cc[0].StudentHelpline </p>
+                                <p>Office : @cc[0].StudentHelpline </p>
+                                <p>Email : @cc[0].Email </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                        <div class="link-widget">
+                            <h3>Departments</h3>
+                            <ul class="list-style-square">
+                                @foreach (var a in dep)
+                                {
+                                    <li>@Html.ActionLink(a.name, "Departments", new { id = a.Depid })</li>
+                                }
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="ulockd-copy-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="color-white">L.L.R.M Copyright© 2018. | Powered By : <a href="https://www.officialsolutions.in" target="_blank">Official Solutions</a> All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a class="scrollToHome" href="#"><i class="fa fa-home"></i></a>
+    </div>
+    <!-- Wrapper End -->
+    <script type="text/javascript" src="~/js/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/bootsnav.js"></script>
+    <script type="text/javascript" src="~/js/parallax.js"></script>
+    <script type="text/javascript" src="~/js/scrollto.js"></script>
+    <script type="text/javascript" src="~/js/jquery-scrolltofixed-min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.counterup.js"></script>
+    <script type="text/javascript" src="~/js/gallery.js"></script>
+    <script type="text/javascript" src="~/js/wow.min.js"></script>
+    <script type="text/javascript" src="~/js/slider.js"></script>
+    <script type="text/javascript" src="~/js/video-player.js"></script>
+    <script type="text/javascript" src="~/js/jquery.barfiller.js"></script>
+    <script type="text/javascript" src="~/js/timepicker.js"></script>
+    <script type="text/javascript" src="~/js/tweetie.js"></script>
+    <!-- Custom script for all pages -->
+    @*<script type="text/javascript" src="~/js/color-switcher.js"></script>*@
+    <script type="text/javascript" src="~/js/script.js"></script>
+    <script src="~/js/owlcrawsal.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#testimonial-slider").owlCarousel({
+                items: 1,
+                itemsDesktop: [1000, 1],
+                itemsDesktopSmall: [979, 1],
+                itemsTablet: [768, 1],
+                pagination: true,
+                navigation: false,
+                slideSpeed: 1000,
+                autoPlay: true
+            });
+        });
+    </script>
+</body>
+
+<!-- Mirrored from unlockdesizn.com/html/corporate/education/iqra/demo/index-multipage.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Jul 2018 15:21:12 GMT -->
+</html>
+

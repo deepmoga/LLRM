@@ -1,0 +1,67 @@
+﻿@model LLRM.Areas.Auth.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Auth/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentHelpline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentHelpline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddmissionContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddmissionContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficeContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficeContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddmissionEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddmissionEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,71 @@
+﻿@model LLRM.Areas.Auth.Models.departmentdata
+@using Admin2.Models
+@{
+    ViewBag.Title = "Departments";
+    Layout = "~/Views/Shared/Sidebar.cshtml";
+    dbcontext db = new dbcontext();
+    var a = db.departmentdatas.ToList();
+    int id = Convert.ToInt32(TempData["a"]);
+    var g = db.DepGalleries.Where(x => x.Depid == id);
+}
+
+@section bread {
+    <div class="ulockd-inner-home">
+        <div class="container text-center">
+            <div class="row">
+                <div class="inner-conraimer-details">
+                    <div class="col-md-12">
+                        <h1 class="text-uppercase">@Model.name</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="col-sm-12 col-md-12">
+    <ul class="rslides">
+        @foreach (var ab in g)
+        {
+            <li><img src="~/UploadedFiles/@ab.Image" alt=""></li>
+        }
+       
+       
+    </ul>
+</div>
+    <div class="col-sm-12 col-md-12">
+        <div class="ulock-about">
+            <h4>@Model.name</h4>
+            <hr />
+            @Html.Raw(Model.Description)
+
+        </div>
+    </div>
+
+
+
+
+    @section Sidebar{
+        <div class="widget-sidebar">
+            <div class="ulockd-all-service">
+
+                <div class="list-group">
+                    @foreach (var de in a)
+                    {
+                        @Html.ActionLink(de.name, "Departments", new { id = de.Depid }, new { @class = "list-group-item" })
+                    }
+
+
+                </div>
+            </div>
+        </div>
+        <div class="ulockd-inr-testimonials">
+            <div class="ulockd-tm-client-details">
+                <div class="ulockd-tm-name">
+                    <h4 class="text-thm1">Download Prospectus</h4>
+                </div>
+            </div>
+            <p><a href="~/UploadedFiles/prospectus_2017_FOR_WEB.pdf" target="_blank">Click Here To Download</a></p>
+
+        </div>
+    }

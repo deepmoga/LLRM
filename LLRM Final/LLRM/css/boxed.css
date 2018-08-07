@@ -1,0 +1,42 @@
+/* Initialize Variables */
+/* Unlockd Project Color */
+body {
+  margin: 0 auto !important;
+  overflow-x: hidden !important;
+  width: 1200px; }
+
+.header-middle,
+.ulockd-feature-box,
+.ulockd-fservice,
+.ulockd-service,
+.ulockd-team,
+.ulockd-about,
+.ulockd-team-two,
+.ulockd-about2,
+.our-team,
+.ulockd-contact {
+  background-color: #ffffff; }
+
+.main-slider2 .caption {
+  padding: 12% 18%; }
+
+.main-slider2 .mslider-caption {
+  padding: 13% 15% !important; }
+
+.ulockd-partner,
+.ulockd-footer2 {
+  background-color: #ffffff; }
+
+.team-one {
+  background-color: transparent; }
+
+.box-bg1 {
+  background-image: url("../images/pattern/2.jpg"); }
+
+.box-bg2 {
+  background-image: url("../images/pattern/3.png"); }
+
+.box-bg4 {
+  background-image: url("../images/pattern/4.jpg"); }
+
+/*# sourceMappingURL=boxed.css.map */

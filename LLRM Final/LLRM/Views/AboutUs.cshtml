@@ -1,0 +1,98 @@
+﻿@using LLRM.Areas.Auth.Models
+@using Admin2.Models
+@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    dbcontext db = new dbcontext();
+    List<Pages> page = db.Pages.ToList();
+    List<Message> mm = db.Messages.ToList();
+}
+
+<div class="ulockd-inner-home">
+    <div class="container text-center">
+        <div class="row">
+            <div class="inner-conraimer-details">
+                <div class="col-md-12">
+                    <h1 class="text-uppercase">About Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="ulockd-about2">
+    <div class="container">
+        <div class="row">
+            @foreach (var ab in page.Where(x => x.id == 6))
+            {
+                <div class="col-sm-12 col-md-7">
+                    <div class="ulock-about">
+                        <h1 class="title-bottom ulockd-mrgn630">About<span class="text-thm2"> L.L.R.M</span></h1>
+                        @Html.Raw(ab.Description)
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <div class="ulockd-about-box" style="margin-top:90px">
+                        <div class="ab-thumb">
+                            <img class="img-responsive img-whp" src="~/UploadedFiles/@ab.Image" alt="@ab.PageName">
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="ulockd-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+                <div class="ulockd-main-title">
+                    <h2 class="text-uppercase design">OUR <span class="text-thm2">Management</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ulockd-mrgn1240">
+            @foreach (var m in mm)
+            {
+                <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-3">
+                    <div class="team-member-two">
+                        <div class="ulockd-tm-thumb">
+                            <img class="img-responsive img-whp" src="~/UploadedFiles/@m.Image" alt="7.jpg">
+                            <div class="team-two-details">
+                                <div class="tm-name">@m.Name</div>
+                                <h5 class="tm-post">- @m.Designation</h5>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+          
+        </div>
+    </div>
+</section>
+@*<section class="ulockd-team-two" style="background: menu;">
+    <div class="container">
+        
+        <div class="row">
+            @foreach (var m in page.Where(x => x.id == 4))
+            {
+                <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6">
+                  
+                    <h3>Our Mision</h3>
+                    <p>@Html.Raw(m.Description)</p>
+                </div>
+            }
+            @foreach (var v in page.Where(x => x.id == 5))
+            {
+                <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6">
+                
+                    <h3>Our Vision</h3>
+                    <p>@Html.Raw(v.Description)</p>
+                 </div>
+            }
+        </div>
+    </div>
+</section>*@
